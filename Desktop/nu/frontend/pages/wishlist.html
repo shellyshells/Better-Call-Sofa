@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Better-Call-Sofa | Your Wishlist</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/wishlist.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="../index.html">
+          <h1>Better-Call-Sofa</h1>
+          <p>Your Furniture, Your Style</p>
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li>
+            <a href="#" id="categoriesDropdown">Categories <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-menu" id="categoriesMenu">
+              <a href="../index.html?category=sofa">Sofas</a>
+              <a href="../index.html?category=chair">Chairs</a>
+              <a href="../index.html?category=table">Tables</a>
+              <a href="../index.html?category=bed">Beds</a>
+              <a href="../index.html?category=storage">Storage</a>
+            </div>
+          </li>
+          <li>
+            <a href="#" id="roomsDropdown">Rooms <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-menu" id="roomsMenu">
+              <a href="../index.html?room=living room">Living Room</a>
+              <a href="../index.html?room=bedroom">Bedroom</a>
+              <a href="../index.html?room=dining room">Dining Room</a>
+              <a href="../index.html?room=office">Office</a>
+              <a href="../index.html?room=multi-purpose">Multi-Purpose</a>
+            </div>
+          </li>
+          <li><a href="../index.html?sale=true" id="saleLink">Sale</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search products...">
+          <button id="searchButton"><i class="fas fa-search"></i></button>
+        </div>
+        <a href="wishlist.html" class="icon-link active">
+          <i class="fas fa-heart"></i>
+          <span id="wishlistCount">0</span>
+        </a>
+        <a href="cart.html" class="icon-link">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cartCount">0</span>
+        </a>
+        <button id="menuToggle" class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="wishlist-section">
+        <h1>Your Wishlist</h1>
+        
+        <div class="loading" id="wishlistLoading">
+          <i class="fas fa-spinner fa-spin"></i>
+          <p>Loading your wishlist...</p>
+        </div>
+        
+        <div id="wishlistContent" class="wishlist-content" style="display: none;">
+          <div id="emptyWishlist" class="empty-wishlist" style="display: none;">
+            <i class="fas fa-heart"></i>
+            <h2>Your wishlist is empty</h2>
+            <p>Add items to your wishlist to save them for later.</p>
+            <a href="../index.html" class="btn">Continue Shopping</a>
+          </div>
+          
+          <div class="wishlist-actions" id="wishlistActions" style="display: none;">
+            <div class="action-buttons">
+              <button id="sortByPriorityBtn" class="btn btn-secondary">Sort by Priority</button>
+              <button id="clearWishlistBtn" class="btn btn-secondary">Clear Wishlist</button>
+            </div>
+            <p class="wishlist-tip">Tip: Drag items to rearrange their priority order.</p>
+          </div>
+          
+          <div id="wishlistItems" class="wishlist-items">
+            <!-- Wishlist items will be loaded here -->
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Better-Call-Sofa</h3>
+          <p>Your destination for stylish and comfortable furniture. Transform your living spaces with our curated collection.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html?category=sofa">Sofas</a></li>
+            <li><a href="../index.html?category=chair">Chairs</a></li>
+            <li><a href="../index.html?category=table">Tables</a></li>
+            <li><a href="../index.html?category=bed">Beds</a></li>
+            <li><a href="../index.html?category=storage">Storage</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Furniture Street, Décor City</p>
+          <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+          <p><i class="fas fa-envelope"></i> info@bettercallsofa.com</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Better-Call-Sofa. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Wishlist item template -->
+  <template id="wishlistItemTemplate">
+    <div class="wishlist-item" draggable="true">
+      <div class="item-priority">
+        <span class="priority-number"></span>
+        <i class="fas fa-grip-lines"></i>
+      </div>
+      <div class="item-image">
+        <img src="" alt="">
+      </div>
+      <div class="item-details">
+        <h3 class="item-name"></h3>
+        <div class="item-price">
+          <span class="original-price"></span>
+          <span class="discounted-price"></span>
+        </div>
+      </div>
+      <div class="item-actions">
+        <button class="btn btn-primary add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+        <a href="#" class="btn btn-secondary view-details-btn">View Details</a>
+        <button class="remove-item-btn"><i class="fas fa-trash"></i></button>
+      </div>
+    </div>
+  </template>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/wishlist.js"></script>
+</body>
+</html>
