@@ -7,5 +7,23 @@
     "discount": 10,
     "image": "/public/images/1/black/kivik-sofa-1.jpg",
     "priority": 1
+  },
+  {
+    "id": "1746148502892",
+    "productId": "3",
+    "name": "POÄNG Armchair",
+    "price": 219,
+    "discount": 15,
+    "image": "/public/images/3/beige/poang-chair-1.jpg",
+    "priority": 2
+  },
+  {
+    "id": "1746148505165",
+    "productId": "4",
+    "name": "MALM Bed Frame",
+    "price": 269,
+    "discount": 5,
+    "image": "/public/images/4/dark-brown-veneer/malm-bed-1.jpg",
+    "priority": 3
   }
 ]
