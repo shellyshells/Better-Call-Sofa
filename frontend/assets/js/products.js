@@ -55,6 +55,15 @@ function initFilters() {
       applyFilters();
     });
   }
+
+  // Room type filter
+  const roomFilter = document.getElementById('roomFilter');
+  if (roomFilter) {
+    roomFilter.addEventListener('change', function() {
+      currentFilters.roomType = this.value;
+      applyFilters();
+    });
+  }
   
   // Color filter
   const colorFilter = document.getElementById('colorFilter');
@@ -106,18 +115,43 @@ function initFilters() {
       applyFilters();
     });
   });
+
   
   // Room links in dropdown
   const roomLinks = document.querySelectorAll('#roomsMenu a');
-  roomLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const room = this.getAttribute('data-room');
-      currentFilters.roomType = room;
-      applyFilters();
-    });
+roomLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const room = this.getAttribute('data-room');
+    
+    // Update room filter dropdown
+    if (roomFilter) {
+      roomFilter.value = room;
+    }
+    
+    currentFilters.roomType = room;
+    applyFilters();
   });
+});
   
+// Color links in dropdown
+
+const colorLinks = document.querySelectorAll('#colorsMenu a');
+colorLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const color = this.getAttribute('data-color');
+    
+    // Update color filter dropdown
+    if (colorFilter) {
+      colorFilter.value = color;
+    }
+    
+    currentFilters.color = color;
+    applyFilters();
+  });
+});
+
   const prevPageBtn = document.getElementById('prevPage');
   const nextPageBtn = document.getElementById('nextPage');
   if (prevPageBtn && nextPageBtn) {
@@ -481,6 +515,16 @@ function applyUrlFilters() {
       categoryFilter.value = params.category;
     }
   }
+
+  if (params.roomType) {
+    currentFilters.roomType = params.roomType;
+
+    // Update room type dropdown
+    const roomFilter = document.getElementById('roomFilter');
+    if (roomFilter) {
+      roomFilter.value = params.roomType;
+    }
+  }
   
   if (params.color) {
     currentFilters.color = params.color;
@@ -551,10 +595,8 @@ function applyUrlFilters() {
  */
 async function applyFilters() {
   try {
-    // Reset to page 1
     currentPage = 1;
     
-    // Show loading
     const productGrid = document.getElementById('productGrid');
     if (productGrid) {
       productGrid.innerHTML = `
@@ -565,9 +607,7 @@ async function applyFilters() {
       `;
     }
     
-    // Check if using API filter or client-side filter
     if (Object.keys(currentFilters).length === 1 && currentFilters.sortBy) {
-      // Only sorting, use client-side
       currentProducts = [...allProducts];
       sortProducts(currentFilters.sortBy);
     } else if (
@@ -576,38 +616,29 @@ async function applyFilters() {
       currentFilters.roomType || 
       currentFilters.onSale
     ) {
-      // Use API filter
       const result = await API.products.filter(currentFilters);
       currentProducts = result;
       
-      // Apply client-side sorting if needed
       if (currentFilters.sortBy) {
         sortProducts(currentFilters.sortBy);
       }
       
-      // Apply client-side price filter if needed
       if (currentFilters.maxPrice) {
         applyPriceFilter(currentFilters.maxPrice);
       }
     } else {
-      // Reset to all products
       currentProducts = [...allProducts];
       
-      // Apply client-side price filter if needed
       if (currentFilters.maxPrice) {
         applyPriceFilter(currentFilters.maxPrice);
       }
       
-      // Apply client-side sorting if needed
       if (currentFilters.sortBy) {
         sortProducts(currentFilters.sortBy);
       }
     }
     
-    // Update URL
     updateUrl();
-    
-    // Display filtered products
     displayProducts();
   } catch (error) {
     console.error('Error applying filters:', error);
@@ -622,7 +653,6 @@ async function applyFilters() {
         </div>
       `;
       
-      // Add retry button functionality
       const retryBtn = document.getElementById('retryBtn');
       if (retryBtn) {
         retryBtn.addEventListener('click', () => applyFilters());

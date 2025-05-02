@@ -30,7 +30,7 @@
       "sectional"
     ],
     "material": "fabric",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "2",
@@ -54,7 +54,7 @@
       "4-seater"
     ],
     "material": "wood",
-    "roomType": "dining room"
+    "roomType": "dining-room"
   },
   {
     "id": "3",
@@ -85,7 +85,7 @@
       "standard"
     ],
     "material": "fabric",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "4",
@@ -146,7 +146,7 @@
       "square"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "6",
@@ -179,7 +179,7 @@
       "tall"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "7",
@@ -271,7 +271,7 @@
       "standard"
     ],
     "material": "fabric",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "10",
@@ -298,7 +298,7 @@
       "4-seater"
     ],
     "material": "wood",
-    "roomType": "dining room"
+    "roomType": "dining-room"
   },
   {
     "id": "11",
@@ -325,12 +325,12 @@
       "standard"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "12",
     "name": "FRIHETEN Sleeper Sofa",
-    "description": "After a good night's sleep, you can effortlessly convert your bedroom or guest room into a living room again. The built-in storage is easy to access and spacious enough to store bedding, books and PJs.",
+    "description": "After a good night's sleep, you can effortlessly convert your bedroom or guest room into a living-room again. The built-in storage is easy to access and spacious enough to store bedding, books and PJs.",
     "stock": 8,
     "price": 749,
     "discount": 15,
@@ -356,7 +356,7 @@
       "corner"
     ],
     "material": "fabric",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "13",
@@ -414,7 +414,7 @@
       "standard"
     ],
     "material": "fabric",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "15",
@@ -445,7 +445,7 @@
       "standard"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "16",
@@ -534,7 +534,7 @@
       "5-section"
     ],
     "material": "fabric",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "19",
@@ -557,7 +557,7 @@
       "standard"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "20",
@@ -665,7 +665,7 @@
       "gateleg"
     ],
     "material": "wood",
-    "roomType": "dining room"
+    "roomType": "dining-room"
   },
   {
     "id": "24",
@@ -696,7 +696,7 @@
       "standard"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "25",
@@ -1449,7 +1449,7 @@
       "sideboard"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "52",
@@ -1480,7 +1480,7 @@
       "cabinet"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "53",
@@ -1509,7 +1509,7 @@
       "with-drawers"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "54",
@@ -1532,7 +1532,7 @@
       "sideboard"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "55",
@@ -1560,7 +1560,7 @@
       "3-drawer"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "56",
@@ -1587,7 +1587,7 @@
       "cabinet"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "57",
@@ -1614,7 +1614,7 @@
       "sideboard"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "58",
@@ -1637,7 +1637,7 @@
       "cabinet"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "59",
@@ -1665,7 +1665,7 @@
       "large"
     ],
     "material": "wood/glass",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "60",
@@ -1689,7 +1689,7 @@
       "large"
     ],
     "material": "wood/glass",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "61",
@@ -1712,7 +1712,7 @@
       "sideboard"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "62",
@@ -1738,7 +1738,7 @@
     ],
     "material": "polypropylene",
     "pileHeight": "low",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "63",
@@ -1768,7 +1768,7 @@
     ],
     "material": "polyester",
     "pileHeight": "low",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "64",
@@ -1845,7 +1845,7 @@
       "large"
     ],
     "material": "polypropylene",
-    "roomType": "living room/dining room"
+    "roomType": "living-room/dining-room"
   },
   {
     "id": "67",
@@ -1872,7 +1872,7 @@
       "set of 2"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "68",
@@ -1899,7 +1899,7 @@
       "standard"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "69",
@@ -1928,7 +1928,7 @@
       "standard"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "70",
@@ -1959,7 +1959,7 @@
       "set of 2"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "71",
@@ -2119,12 +2119,12 @@
       "extendable"
     ],
     "material": "wood",
-    "roomType": "dining room"
+    "roomType": "dining-room"
   },
   {
     "id": "77",
     "name": "HÄGERNÄS Bar table and 4 bar stools",
-    "description": "The look and finish of this bar table work well both in kitchens and dining rooms.",
+    "description": "The look and finish of this bar table work well both in kitchens and dining-rooms.",
     "stock": 12,
     "price": 249.99,
     "discount": 0,
@@ -2146,7 +2146,7 @@
       "standard"
     ],
     "material": "wood",
-    "roomType": "dining room"
+    "roomType": "dining-room"
   },
   {
     "id": "78",
@@ -2323,7 +2323,7 @@
       "standard"
     ],
     "material": "wood",
-    "roomType": "living room"
+    "roomType": "living-room"
   },
   {
     "id": "85",
