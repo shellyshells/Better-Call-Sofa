@@ -52,6 +52,10 @@ class Product {
     return this.products.filter(product => product.sizes.includes(size));
   }
 
+  getProductsByMaterial(material) {
+    return this.products.filter(product => product.material === material);
+  }
+
   getProductsOnSale() {
     return this.products.filter(product => product.discount > 0);
   }
@@ -62,6 +66,63 @@ class Product {
       product.name.toLowerCase().includes(query) || 
       product.description.toLowerCase().includes(query)
     );
+  }
+
+  getFilteredProducts(filters) {
+    let filteredProducts = this.products;
+    
+    // Category filter
+    if (filters.category) {
+      filteredProducts = filteredProducts.filter(product => 
+        product.category === filters.category
+      );
+    }
+    
+    // Room type filter
+    if (filters.roomType) {
+      filteredProducts = filteredProducts.filter(product => 
+        product.roomType === filters.roomType || 
+        (typeof product.roomType === 'string' && product.roomType.includes(filters.roomType))
+      );
+    }
+    
+    // Color filter
+    if (filters.color) {
+      filteredProducts = filteredProducts.filter(product => 
+        product.colors && product.colors.includes(filters.color)
+      );
+    }
+    
+    // Size filter
+    if (filters.size) {
+      filteredProducts = filteredProducts.filter(product => 
+        product.sizes && product.sizes.includes(filters.size)
+      );
+    }
+    
+    // Material filter
+    if (filters.material) {
+      filteredProducts = filteredProducts.filter(product => 
+        product.material === filters.material
+      );
+    }
+    
+    // Price filter
+    if (filters.maxPrice) {
+      filteredProducts = filteredProducts.filter(product => {
+        const discountedPrice = product.price * (1 - product.discount / 100);
+        return discountedPrice <= parseFloat(filters.maxPrice);
+      });
+    }
+    
+    // On sale filter
+    if (filters.onSale === 'true') {
+      filteredProducts = filteredProducts.filter(product => 
+        product.discount > 0
+      );
+    }
+    
+    return filteredProducts;
   }
 
   updateStock(id, quantity) {
