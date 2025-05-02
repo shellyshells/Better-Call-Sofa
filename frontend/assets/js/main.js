@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (saleLink) {
       saleLink.addEventListener('click', function(e) {
         e.preventDefault();
-        window.location.href = 'index.html?onSale=true';
+        window.location.href = '../index.html?onSale=true';
       });
     }
   }
