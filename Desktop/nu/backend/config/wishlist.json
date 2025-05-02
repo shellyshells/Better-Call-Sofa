@@ -25,5 +25,14 @@
     "discount": 5,
     "image": "/public/images/4/dark-brown-veneer/malm-bed-1.jpg",
     "priority": 3
+  },
+  {
+    "id": "1746161314780",
+    "productId": "11",
+    "name": "BRIMNES TV Unit",
+    "price": 149.99,
+    "discount": 5,
+    "image": "/public/images/11/black/brimnes-tv-unit-1.jpg",
+    "priority": 4
   }
 ]
