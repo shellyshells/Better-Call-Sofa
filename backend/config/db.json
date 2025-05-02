@@ -1019,7 +1019,7 @@
       "/public/images/36/white/angson-vanity-2.jpg",
       "/public/images/36/white/angson-vanity-3.jpg"
     ],
-    "category": "bathroom",
+    "category": "accessories",
     "colors": [
       "oak-effect",
       "brown",
@@ -1052,7 +1052,7 @@
       "/public/images/37/white/faxalven-cabinet-2.jpg",
       "/public/images/37/white/faxalven-cabinet-3.jpg"
     ],
-    "category": "bathroom",
+    "category": "accessories",
     "colors": [
       "oak-effect",
       "brown",
@@ -1082,7 +1082,7 @@
       "/public/images/38/chrome/runskar-faucet-2.jpg",
       "/public/images/38/chrome/runskar-faucet-3.jpg"
     ],
-    "category": "bathroom",
+    "category": "accessories",
     "colors": [
       "brass",
       "chrome"
@@ -1114,7 +1114,7 @@
       "/public/images/39/oak/angson-vanity-2.jpg",
       "/public/images/39/oak/angson-vanity-3.jpg"
     ],
-    "category": "bathroom",
+    "category": "accessories",
     "colors": [
       "brown-oak",
       "white",
@@ -1141,7 +1141,7 @@
       "/public/images/40/white/tornviken-sink-2.jpg",
       "/public/images/40/white/tornviken-sink-3.jpg"
     ],
-    "category": "bathroom",
+    "category": "accessories",
     "colors": [
       "white"
     ],
@@ -1166,7 +1166,7 @@
       "/public/images/41/dark-gray-mirror/oxmyren-sink-2.jpg",
       "/public/images/41/dark-gray-mirror/oxmyren-sink-3.jpg"
     ],
-    "category": "bathroom",
+    "category": "accessories",
     "colors": [
       "dark-gray-mirror"
     ],
@@ -1245,7 +1245,7 @@
       "/public/images/44/white-blue/vattensjon-curtain-2.jpg",
       "/public/images/44/white-blue/vattensjon-curtain-3.jpg"
     ],
-    "category": "bathroom",
+    "category": "accessories",
     "colors": [
       "white-blue"
     ],
@@ -1273,7 +1273,7 @@
       "/public/images/45/white/tannforsen-vanity-2.jpg",
       "/public/images/45/white/tannforsen-vanity-3.jpg"
     ],
-    "category": "bathroom",
+    "category": "accessories",
     "colors": [
       "light-gray",
       "white"
@@ -1302,7 +1302,7 @@
       "/public/images/46/light-gray/tannforsen-vanity-2.jpg",
       "/public/images/46/light-gray/tannforsen-vanity-3.jpg"
     ],
-    "category": "bathroom",
+      "category": "accessories",
     "colors": [
       "white",
       "light-gray"
@@ -1334,7 +1334,7 @@
       "/public/images/47/white/havback-vanity-2.jpg",
       "/public/images/47/white/havback-vanity-3.jpg"
     ],
-    "category": "bathroom",
+      "category": "accessories",
     "colors": [
       "dark-gray",
       "beige",
@@ -1364,7 +1364,7 @@
       "/public/images/48/light-gray/tannforsen-vanity-2.jpg",
       "/public/images/48/light-gray/tannforsen-vanity-3.jpg"
     ],
-    "category": "bathroom",
+      "category": "accessories",
     "colors": [
       "white",
       "light-gray"
@@ -1389,7 +1389,7 @@
       "/public/images/49/white/lilltjarn-vanity-2.jpg",
       "/public/images/49/white/lilltjarn-vanity-3.jpg"
     ],
-    "category": "bathroom",
+      "category": "accessories",
     "colors": [
       "white"
     ],
@@ -1414,7 +1414,7 @@
       "/public/images/50/white-oak/enhet-vanity-2.jpg",
       "/public/images/50/white-oak/enhet-vanity-3.jpg"
     ],
-    "category": "bathroom",
+      "category": "accessories",
     "colors": [
       "white-oak"
     ],
@@ -2384,7 +2384,7 @@
       "/public/images/87/clear/silvtjarn-container-2.jpg",
       "/public/images/87/clear/silvtjarn-container-3.jpg"
     ],
-    "category": "bathroom accessories",
+      "category": "accessories",
     "colors": [
       "clear"
     ],
@@ -2453,7 +2453,7 @@
       "/public/images/90/gray/brofjardem-bathroom-set-2.jpg",
       "/public/images/90/gray/brofjardem-bathroom-set-3.jpg"
     ],
-    "category": "bathroom accessories",
+      "category": "accessories",
     "colors": [
       "gray"
     ],
@@ -2476,7 +2476,7 @@
       "/public/images/91/brown/valvardad-soap-dispenser-2.jpg",
       "/public/images/91/brown/valvardad-soap-dispenser-3.jpg"
     ],
-    "category": "kitchen accessories",
+    "category": "accessories",
     "colors": [
       "brown"
     ],
@@ -2499,7 +2499,7 @@
       "/public/images/92/brown/brugdhaj-salt-pepper-shaker-2.jpg",
       "/public/images/92/brown/brugdhaj-salt-pepper-shaker-3.jpg"
     ],
-    "category": "kitchen accessories",
+    "category": "accessories",
     "colors": [
       "brown"
     ],
@@ -2522,7 +2522,7 @@
       "/public/images/93/blue/brugdhaj-oil-vinegar-bottle-2.jpg",
       "/public/images/93/blue/brugdhaj-oil-vinegar-bottle-3.jpg"
     ],
-    "category": "kitchen accessories",
+    "category": "accessories",
     "colors": [
       "blue"
     ],
@@ -2545,7 +2545,7 @@
       "/public/images/94/brown/halvtom-spice-mill-2.jpg",
       "/public/images/94/brown/halvtom-spice-mill-3.jpg"
     ],
-    "category": "kitchen accessories",
+    "category": "accessories",
     "colors": [
       "brown"
     ],
@@ -2568,7 +2568,7 @@
       "/public/images/95/stainless-steel/plats-salt-pepper-shaker-2.jpg",
       "/public/images/95/stainless-steel/plats-salt-pepper-shaker-3.jpg"
     ],
-    "category": "kitchen accessories",
+    "category": "accessories",
     "colors": [
       "stainless-steel"
     ],
@@ -2591,7 +2591,7 @@
       "/public/images/96/chrome/balungen-soap-dispenser-2.jpg",
       "/public/images/96/chrome/balungen-soap-dispenser-3.jpg"
     ],
-    "category": "bathroom accessories",
+      "category": "accessories",
     "colors": [
       "chrome"
     ],
@@ -2614,7 +2614,7 @@
       "/public/images/97/natural/valvardad-dish-washing-brush-2.jpg",
       "/public/images/97/natural/valvardad-dish-washing-brush-3.jpg"
     ],
-    "category": "kitchen accessories",
+    "category": "accessories",
     "colors": [
       "natural"
     ],
