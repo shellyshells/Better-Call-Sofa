@@ -1,1 +1,35 @@
-[]
+[
+  {
+    "id": "1746170898662",
+    "productId": "12",
+    "name": "FRIHETEN Sleeper Sofa",
+    "price": 749,
+    "discount": 15,
+    "image": "/public/images/12/black/friheten-sofa-1.jpg",
+    "quantity": 1,
+    "color": "black",
+    "size": "corner"
+  },
+  {
+    "id": "1746171852892",
+    "productId": "2",
+    "name": "MÖRBYLÅNGA Dining Table",
+    "price": 699.99,
+    "discount": 0,
+    "image": "/public/images/2/oak/morbylanga-table-1.jpg",
+    "quantity": 1,
+    "color": "oak",
+    "size": "2-seater"
+  },
+  {
+    "id": "1746171854061",
+    "productId": "3",
+    "name": "POÄNG Armchair",
+    "price": 219,
+    "discount": 15,
+    "image": "/public/images/3/beige/poang-chair-1.jpg",
+    "quantity": 1,
+    "color": "beige",
+    "size": "standard"
+  }
+]

@@ -603,6 +603,50 @@
   margin-top: 20px;
 }
 
+/* Address Map */
+#map {
+  border-radius: 8px;
+  border: 1px solid var(--light-gray);
+}
+
+/* Make the map container full width */
+.form-group.map {
+  grid-column: span 2;
+  width: 100%;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  #map {
+    height: 300px;
+  }
+  
+  .form-group.map {
+    grid-column: span 1;
+  }
+}
+
+.leaflet-container {
+  border-radius: var(--border-radius);
+}
+
+.map-marker-popup h3 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.map-marker-popup p {
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+}
+
+.map-marker-popup button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 5px;
+  font-size: 0.85rem;
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
   .cart-content {

@@ -28,6 +28,10 @@
               <a href="#" data-category="table">Tables</a>
               <a href="#" data-category="bed">Beds</a>
               <a href="#" data-category="storage">Storage</a>
+              <a href="#" data-category="accessories">Bathroom</a>
+              <a href="#" data-category="kitchen">Kitchen</a>
+              <a href="#" data-category="home decor">Home Decor</a>
+              <a href="#" data-category="rugs">Rugs</a>
             </div>
           </li>
           <li>
@@ -37,6 +41,9 @@
               <a href="#" data-room="bedroom">Bedroom</a>
               <a href="#" data-room="dining room">Dining Room</a>
               <a href="#" data-room="office">Office</a>
+              <a href="#" data-room="kitchen">Kitchen</a>
+              <a href="#" data-room="bathroom">Bathroom</a>
+              <a href="#" data-room="entryway"> Entryway</a>             
               <a href="#" data-room="multi-purpose">Multi-Purpose</a>
             </div>
           </li>
@@ -96,6 +103,10 @@
               <option value="table">Tables</option>
               <option value="bed">Beds</option>
               <option value="storage">Storage</option>
+              <option value="accessories">Bathroom</option>
+              <option value="kitchen">Kitchen</option>
+              <option value="home decor">Home Decor</option>
+              <option value="rugs">Rugs</option>
             </select>
           </div>
           <div class="filter-group">
@@ -141,7 +152,15 @@
           </div>
         </div>
         <div class="pagination">
-          <button id="loadMore" class="btn">Load More</button>
+          <button id="prevPage" class="btn btn-secondary" disabled>
+            <i class="fas fa-chevron-left"></i> Previous
+          </button>
+          <div class="page-numbers" id="pageNumbers">
+            <!-- Page numbers will be inserted here -->
+          </div>
+          <button id="nextPage" class="btn btn-secondary">
+            Next <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -163,6 +182,10 @@
             <li><a href="#" data-category="table">Tables</a></li>
             <li><a href="#" data-category="bed">Beds</a></li>
             <li><a href="#" data-category="storage">Storage</a></li>
+            <li><a href="#" data-category="accessories">Bathroom</a></li>
+            <li><a href="#" data-category="kitchen">Kitchen</a></li>
+            <li><a href="#" data-category="home decor">Home Decor</a></li>
+            <li><a href="#" data-category="rugs">Rugs</a></li>
           </ul>
         </div>
         <div class="footer-section">
