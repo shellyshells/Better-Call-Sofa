@@ -181,17 +181,14 @@
     padding: 15px 20px;
   }
   
-  .logo a {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    color: var(--text-color);
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
   }
   
-  .logo h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 5px;
+  .logo span {
+    color: var(--dark);
   }
   
   .logo p {
