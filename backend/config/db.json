@@ -889,9 +889,9 @@
     "discount": 10,
     "currency": "USD",
     "images": [
-      "/public/images/32/dark-gray-mirror-glass/pax-wardrobe-1.jpg",
-      "/public/images/32/dark-gray-mirror-glass/pax-wardrobe-2.jpg",
-      "/public/images/32/dark-gray-mirror-glass/pax-wardrobe-3.jpg",
+      "/public/images/32/dark-gray-mirror/pax-wardrobe-1.jpg",
+      "/public/images/32/dark-gray-mirror/pax-wardrobe-2.jpg",
+      "/public/images/32/dark-gray-mirror/pax-wardrobe-3.jpg",
       "/public/images/32/white-mirror/pax-wardrobe-1.jpg",
       "/public/images/32/white-mirror/pax-wardrobe-2.jpg",
       "/public/images/32/white-mirror/pax-wardrobe-3.jpg"
@@ -1979,7 +1979,7 @@
     ],
     "category": "kitchen",
     "colors": [
-      "brass-color",
+      "brass",
       "black"
     ],
     "sizes": [
@@ -2261,8 +2261,7 @@
       "/public/images/82/black/dekad-clock-2.jpg",
       "/public/images/82/black/dekad-clock-3.jpg",
       "/public/images/82/white/dekad-clock-1.jpg",
-      "/public/images/82/white/dekad-clock-2.jpg",
-      "/public/images/82/white/dekad-clock-3.jpg"
+      "/public/images/82/white/dekad-clock-2.jpg"
     ],
     "category": "home decor",
     "colors": [
