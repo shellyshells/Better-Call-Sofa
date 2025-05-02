@@ -403,6 +403,38 @@
   .checkbox-label input {
     margin-right: 10px;
   }
+
+  /* Style for the grouped dropdown */
+select optgroup {
+  font-weight: bold;
+  font-style: normal;
+  color: #333;
+  padding: 5px 0;
+}
+
+select optgroup option {
+  font-weight: normal;
+  padding-left: 20px;
+}
+
+/* Improve dropdown appearance */
+select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+select:hover {
+  border-color: #aaa;
+}
+
+select:focus {
+  outline: none;
+  border-color: #666;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+}
   
   /* Product Grid */
   .products {

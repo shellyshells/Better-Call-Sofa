@@ -14,9 +14,9 @@
       "/public/images/1/blue/kivik-sofa-1.jpg",
       "/public/images/1/blue/kivik-sofa-2.jpg",
       "/public/images/1/blue/kivik-sofa-3.jpg",
-      "/public/images/1/black/kivik-sofa-1.jpg",
-      "/public/images/1/black/kivik-sofa-2.jpg",
-      "/public/images/1/black/kivik-sofa-3.jpg"
+      "/public/images/1/gray/kivik-sofa-1.jpg",
+      "/public/images/1/gray/kivik-sofa-2.jpg",
+      "/public/images/1/gray/kivik-sofa-3.jpg"
     ],
     "category": "sofa",
     "colors": [
@@ -762,7 +762,7 @@
     ],
     "category": "storage",
     "colors": [
-      "light beige"
+      "light-beige"
     ],
     "sizes": [
       "2-door",
@@ -892,14 +892,14 @@
       "/public/images/32/dark-gray-mirror-glass/pax-wardrobe-1.jpg",
       "/public/images/32/dark-gray-mirror-glass/pax-wardrobe-2.jpg",
       "/public/images/32/dark-gray-mirror-glass/pax-wardrobe-3.jpg",
-      "/public/images/32/white-mirror-glass-green/pax-wardrobe-1.jpg",
-      "/public/images/32/white-mirror-glass-green/pax-wardrobe-2.jpg",
-      "/public/images/32/white-mirror-glass-green/pax-wardrobe-3.jpg"
+      "/public/images/32/white-mirror/pax-wardrobe-1.jpg",
+      "/public/images/32/white-mirror/pax-wardrobe-2.jpg",
+      "/public/images/32/white-mirror/pax-wardrobe-3.jpg"
     ],
     "category": "storage",
     "colors": [
-      "dark gray/mirror glass",
-      "white/mirror glass"
+      "dark-gray-mirror",
+      "white-mirror"
     ],
     "sizes": [
       "combination",
@@ -931,7 +931,7 @@
     "category": "storage",
     "colors": [
       "gray-beige",
-      "dark gray",
+      "dark-gray",
       "white"
     ],
     "sizes": [
@@ -960,7 +960,7 @@
     ],
     "category": "storage",
     "colors": [
-      "dark gray/mirror glass",
+      "dark-gray-mirror",
       "white"
     ],
     "sizes": [
@@ -989,7 +989,7 @@
     ],
     "category": "storage",
     "colors": [
-      "dark gray/oak",
+      "dark-gray-oak",
       "white"
     ],
     "sizes": [
@@ -1021,7 +1021,7 @@
     ],
     "category": "bathroom",
     "colors": [
-      "oak effect",
+      "oak-effect",
       "brown",
       "white"
     ],
@@ -1054,7 +1054,7 @@
     ],
     "category": "bathroom",
     "colors": [
-      "oak effect",
+      "oak-effect",
       "brown",
       "white"
     ],
@@ -1162,13 +1162,13 @@
     "discount": 10,
     "currency": "USD",
     "images": [
-      "/public/images/41/glass-dark-gray/oxmyren-sink-1.jpg",
-      "/public/images/41/glass-dark-gray/oxmyren-sink-2.jpg",
-      "/public/images/41/glass-dark-gray/oxmyren-sink-3.jpg"
+      "/public/images/41/dark-gray-mirror/oxmyren-sink-1.jpg",
+      "/public/images/41/dark-gray-mirror/oxmyren-sink-2.jpg",
+      "/public/images/41/dark-gray-mirror/oxmyren-sink-3.jpg"
     ],
     "category": "bathroom",
     "colors": [
-      "glass/dark gray"
+      "dark-gray-mirror"
     ],
     "sizes": [
       "sink",
@@ -1241,13 +1241,13 @@
     "discount": 15,
     "currency": "USD",
     "images": [
-      "/public/images/44/white-blue-fish/vattensjon-curtain-1.jpg",
-      "/public/images/44/white-blue-fish/vattensjon-curtain-2.jpg",
-      "/public/images/44/white-blue-fish/vattensjon-curtain-3.jpg"
+      "/public/images/44/white-blue/vattensjon-curtain-1.jpg",
+      "/public/images/44/white-blue/vattensjon-curtain-2.jpg",
+      "/public/images/44/white-blue/vattensjon-curtain-3.jpg"
     ],
     "category": "bathroom",
     "colors": [
-      "white blue/fish"
+      "white-blue"
     ],
     "sizes": [
       "shower",
@@ -1275,7 +1275,7 @@
     ],
     "category": "bathroom",
     "colors": [
-      "light gray",
+      "light-gray",
       "white"
     ],
     "sizes": [
@@ -1305,7 +1305,7 @@
     "category": "bathroom",
     "colors": [
       "white",
-      "light gray"
+      "light-gray"
     ],
     "sizes": [
       "vanity",
@@ -1336,7 +1336,7 @@
     ],
     "category": "bathroom",
     "colors": [
-      "dark gray",
+      "dark-gray",
       "beige",
       "white"
     ],
@@ -1367,7 +1367,7 @@
     "category": "bathroom",
     "colors": [
       "white",
-      "light gray"
+      "light-gray"
     ],
     "sizes": [
       "double-vanity",
@@ -1472,7 +1472,7 @@
     ],
     "category": "storage",
     "colors": [
-      "dark blue-green",
+      "dark-blue-green",
       "black",
       "light-beige"
     ],
@@ -1500,7 +1500,7 @@
     ],
     "category": "storage",
     "colors": [
-      "gray-green/light brown stained",
+      "gray-green",
       "white"
     ],
     "sizes": [
@@ -1552,7 +1552,7 @@
     ],
     "category": "storage",
     "colors": [
-      "white stain",
+      "white-stain",
       "black"
     ],
     "sizes": [
@@ -1706,7 +1706,7 @@
     ],
     "category": "storage",
     "colors": [
-      "black stained"
+      "black-stained"
     ],
     "sizes": [
       "sideboard"
@@ -1788,8 +1788,8 @@
     ],
     "category": "rugs",
     "colors": [
-      "pink/orange",
-      "green/black"
+      "pink-orange",
+      "green-black"
     ],
     "sizes": [
       "2-doors",
@@ -1813,7 +1813,7 @@
     ],
     "category": "rugs",
     "colors": [
-      "red geometric"
+      "red-geometric"
     ],
     "sizes": [
       "small",
@@ -1856,17 +1856,17 @@
     "discount": 10,
     "currency": "USD",
     "images": [
-      "/public/images/67/gray-walnut/sonhult-tables-1.jpg",
-      "/public/images/67/gray-walnut/sonhult-tables-2.jpg",
-      "/public/images/67/gray-walnut/sonhult-tables-3.jpg",
-      "/public/images/67/yellow-birch/sonhult-tables-1.jpg",
-      "/public/images/67/yellow-birch/sonhult-tables-2.jpg",
-      "/public/images/67/yellow-birch/sonhult-tables-3.jpg"
+      "/public/images/67/gray/sonhult-tables-1.jpg",
+      "/public/images/67/gray/sonhult-tables-2.jpg",
+      "/public/images/67/gray/sonhult-tables-3.jpg",
+      "/public/images/67/yellow/sonhult-tables-1.jpg",
+      "/public/images/67/yellow/sonhult-tables-2.jpg",
+      "/public/images/67/yellow/sonhult-tables-3.jpg"
     ],
     "category": "tables",
     "colors": [
-      "gray/walnut effect",
-      "yellow/birch"
+      "gray",
+      "yellow"
     ],
     "sizes": [
       "set of 2"
@@ -1892,8 +1892,8 @@
     ],
     "category": "table",
     "colors": [
-      "oak effect",
-      "dark oak"
+      "oak-effect",
+      "dark-oak"
     ],
     "sizes": [
       "standard"
@@ -1921,7 +1921,7 @@
     ],
     "category": "tables",
     "colors": [
-      "stained oak veneer/dark brown smart",
+      "stained-oak",
       "white"
     ],
     "sizes": [
@@ -1979,7 +1979,7 @@
     ],
     "category": "kitchen",
     "colors": [
-      "brass color",
+      "brass-color",
       "black"
     ],
     "sizes": [
@@ -2006,7 +2006,7 @@
     ],
     "category": "kitchen",
     "colors": [
-      "black quartz composite",
+      "black-quartz",
       "gray"
     ],
     "sizes": [
@@ -2060,7 +2060,7 @@
     ],
     "category": "kitchen",
     "colors": [
-      "off-white/oak",
+      "off-white-oak",
       "gray"
     ],
     "sizes": [
@@ -2084,7 +2084,7 @@
     ],
     "category": "kitchen",
     "colors": [
-      "black/oak"
+      "black-oak"
     ],
     "sizes": [
       "small",
@@ -2111,7 +2111,7 @@
     ],
     "category": "dining tables",
     "colors": [
-      "antique stain",
+      "antique-stain",
       "black"
     ],
     "sizes": [
@@ -2139,8 +2139,8 @@
     ],
     "category": "bar furniture",
     "colors": [
-      "black stained pine",
-      "antique stained pine"
+      "black-stained",
+      "antique-stained"
     ],
     "sizes": [
       "standard"
@@ -2166,8 +2166,8 @@
     ],
     "category": "shelving",
     "colors": [
-      "aspen/white",
-      "aspen/blue"
+      "aspen-white",
+      "aspen-blue"
     ],
     "sizes": [
       "standard"
@@ -2193,7 +2193,7 @@
     ],
     "category": "storage",
     "colors": [
-      "white stain",
+      "white-stain",
       "black"
     ],
     "sizes": [
@@ -2217,7 +2217,7 @@
     ],
     "category": "home decor",
     "colors": [
-      "orange glass"
+      "orange-glass"
     ],
     "sizes": [
       "standard"
@@ -2316,7 +2316,7 @@
     ],
     "category": "media furniture",
     "colors": [
-      "white stain",
+      "white-stain",
       "black"
     ],
     "sizes": [
@@ -2340,7 +2340,7 @@
     ],
     "category": "home decor",
     "colors": [
-      "solid wood/black"
+      "solid-wood"
     ],
     "sizes": [
       "set of 3"
@@ -2426,14 +2426,13 @@
     "discount": 0,
     "currency": "USD",
     "images": [
-      "/public/images/89/multi/dajlien-exercise-set-1.jpg",
-      "/public/images/89/multi/dajlien-exercise-set-2.jpg",
-      "/public/images/89/multi/dajlien-exercise-set-3.jpg"
+      "/public/images/89/multicolor/dajlien-exercise-set-1.jpg",
+      "/public/images/89/multicolor/dajlien-exercise-set-2.jpg",
+      "/public/images/89/multicolor/dajlien-exercise-set-3.jpg"
     ],
     "category": "home decor",
     "colors": [
-      "green",
-      "pink"
+      "multicolor"
     ],
     "sizes": [
       "4-piece set"
@@ -2571,7 +2570,7 @@
     ],
     "category": "kitchen accessories",
     "colors": [
-      "stainless steel"
+      "stainless-steel"
     ],
     "sizes": [
       "set of 2"
