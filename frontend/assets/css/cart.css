@@ -605,9 +605,21 @@
 
 /* Address Map */
 #map {
-  border-radius: 8px;
-  border: 1px solid var(--light-gray);
+  height: 300px;
+  margin-bottom: 20px;
 }
+
+.use-current-location {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
 
 /* Make the map container full width */
 .form-group.map {

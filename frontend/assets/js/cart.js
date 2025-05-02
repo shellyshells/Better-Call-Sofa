@@ -15,12 +15,40 @@ let map;
 let marker;
 let geocoder;
 
-
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize cart page
   initCartPage();
+  
+  // Initialize map immediately if element exists
+  const mapElement = document.getElementById('map');
+  if (mapElement) {
+    initMap();
+    
+    // Set a minimum height for the map container
+    mapElement.style.minHeight = '300px';
+    
+    // Add use current location button handler
+    const useCurrentLocationBtn = document.getElementById('use-current-location');
+    if (useCurrentLocationBtn) {
+      useCurrentLocationBtn.addEventListener('click', function() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            function(position) {
+              const userCoords = [position.coords.latitude, position.coords.longitude];
+              map.setView(userCoords, 15);
+              updateMarker(userCoords);
+              reverseGeocode(userCoords[0], userCoords[1]);
+            },
+            function(error) {
+              alert("Unable to get your location. Please enable location services.");
+            }
+          );
+        } else {
+          alert("Geolocation is not supported by your browser.");
+        }
+      });
+    }
+  }
 });
-
 /**
  * Initialize cart page
  */
@@ -1064,39 +1092,54 @@ document.addEventListener('DOMContentLoaded', function() {
   let marker;
   
   function initMap() {
-    // Default to Paris coordinates
-    const defaultCoords = [48.8566, 2.3522];
-    
-    map = L.map('map').setView(defaultCoords, 13);
-    
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-    
-    // Add click event to map
-    map.on('click', function(e) {
-      updateMarker(e.latlng);
-      reverseGeocode(e.latlng.lat, e.latlng.lng);
-    });
-    
-    // Try to get user's current location
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        function(position) {
-          const userCoords = [position.coords.latitude, position.coords.longitude];
-          map.setView(userCoords, 15);
-          updateMarker(userCoords);
-          reverseGeocode(userCoords[0], userCoords[1]);
-        },
-        function(error) {
-          console.error("Geolocation error:", error);
-          // Use default coordinates if geolocation fails
-          updateMarker(defaultCoords);
-        }
-      );
-    } else {
-      // Browser doesn't support Geolocation
+    try {
+      // Default to Paris coordinates
+      const defaultCoords = [48.8566, 2.3522];
+      
+      // Initialize map
+      map = L.map('map', {
+        tap: false, // Fixes touch issues on mobile
+        zoomControl: true // Ensure zoom controls are visible
+      }).setView(defaultCoords, 13);
+      
+      // Add tile layer
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19
+      }).addTo(map);
+      
+      // Add click event to map
+      map.on('click', function(e) {
+        updateMarker(e.latlng);
+        reverseGeocode(e.latlng.lat, e.latlng.lng);
+      });
+      
+      // Add initial marker
       updateMarker(defaultCoords);
+      
+      // Try to get user's current location
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          function(position) {
+            const userCoords = [position.coords.latitude, position.coords.longitude];
+            map.setView(userCoords, 15);
+            updateMarker(userCoords);
+            reverseGeocode(userCoords[0], userCoords[1]);
+          },
+          function(error) {
+            console.log("Geolocation error:", error);
+          },
+          { timeout: 10000 } // 10 second timeout
+        );
+      }
+      
+      // Force map to resize in case it was hidden initially
+      setTimeout(() => {
+        map.invalidateSize();
+      }, 100);
+      
+    } catch (error) {
+      console.error("Map initialization failed:", error);
     }
   }
   
@@ -1116,7 +1159,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (data.address) {
         document.getElementById('address').value = data.address.road || '';
         document.getElementById('city').value = data.address.city || data.address.town || '';
-        document.getElementById('postal-code').value = data.address.postcode || '';
+        document.getElementById('postalCode').value = data.address.postcode || '';
         document.getElementById('country').value = data.address.country_code.toUpperCase() || '';
       }
     } catch (error) {

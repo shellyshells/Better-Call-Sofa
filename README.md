@@ -55,7 +55,9 @@ Features a product catalog, cart, wishlist, and checkout flow.
 better-call-sofa/
 ├── backend/
 │   ├── config/
-│   │   └── db.json
+│   │   ├── cart.json
+│   │   ├── db.json
+│   │   └── wishlist.json
 │   ├── controllers/
 │   │   ├── cartController.js
 │   │   ├── productController.js
@@ -73,15 +75,26 @@ better-call-sofa/
 │   ├── app.js
 │   ├── package.json
 │   └── server.js
-└── frontend/
-    ├── assets/
-    │   ├── css/
-    │   ├── js/
-    ├── pages/
-    │   ├── cart.html
-    │   ├── product-details.html
-    │   └── wishlist.html
-    └── index.html
+    └── frontend/
+        ├── index.html
+        ├── assets/
+        │   ├── css/
+        │   │   ├── cart.css
+        │   │   ├── main.css
+        │   │   ├── product.css
+        │   │   ├── responsive.css
+        │   │   └── wishlist.css
+        │   └── js/
+        │       ├── api.js
+        │       ├── cart.js
+        │       ├── main.js
+        │       ├── product-details.js
+        │       ├── products.js
+        │       └── wishlist.js
+        └── pages/
+            ├── cart.html
+            ├── product-details.html
+            └── wishlist.html
 ```
 
 ---
