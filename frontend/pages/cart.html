@@ -116,7 +116,7 @@
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" required>
+            <input type="email" id="email" placeholder="your@email.com" required>
           </div>
           <div class="form-group">
             <label for="phone">Phone</label>
@@ -223,7 +223,10 @@
           <div id="paypalForm" class="paypal-form" style="display: none;">
             <div class="paypal-info">
               <i class="fab fa-paypal paypal-icon"></i>
-              <p>You will be redirected to PayPal to complete your purchase securely.</p>
+              <div class="form-group">
+                <label for="paypalEmail">PayPal Email</label>
+                <input type="email" id="paypalEmail" placeholder="your@email.com" required>
+              </div>
             </div>
           </div>
 

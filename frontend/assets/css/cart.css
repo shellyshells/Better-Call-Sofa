@@ -518,22 +518,22 @@
   gap: 20px;
 }
 
-.paypal-form {
-  text-align: center;
-  padding: 30px;
-  border: 1px solid var(--gray);
-  border-radius: var(--border-radius);
+.paypal-form .form-group {
+  margin: 20px 0;
+}
+
+.paypal-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 .paypal-icon {
-  font-size: 3rem;
+  font-size: 40px;
   color: #003087;
   margin-bottom: 15px;
-}
-
-.paypal-info {
-  max-width: 400px;
-  margin: 0 auto;
 }
 
 .order-summary-preview {

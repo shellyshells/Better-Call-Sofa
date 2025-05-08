@@ -443,8 +443,21 @@ function validateShippingForm() {
     }
   });
   
+  // Special validation for email field
+  const emailInput = document.getElementById('email');
+  if (emailInput && emailInput.value.trim()) {
+    // Check if email format is valid
+    if (!/^\S+@\S+\.\S+$/.test(emailInput.value)) {
+      emailInput.classList.add('error');
+      showNotification('Please enter a valid email address', 'error');
+      isValid = false;
+    } else {
+      emailInput.classList.remove('error');
+    }
+  }
+  
   if (!isValid) {
-    showNotification('Please fill in all required fields', 'error');
+    showNotification('Please fill in all required fields correctly', 'error');
   }
   
   return isValid;
@@ -454,10 +467,34 @@ function validateShippingForm() {
  * Validate payment form
  */
 function validatePaymentForm() {
-  const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+  const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
   
-  if (paymentMethod === 'paypal') {
-    return true; // PayPal validation handled externally
+  // If no payment method is selected
+  if (!paymentMethod) {
+    showNotification('Please select a payment method', 'error');
+    return false;
+  }
+  
+  if (paymentMethod.value === 'paypal') {
+    const paypalForm = document.getElementById('paypalForm');
+    if (!paypalForm || paypalForm.style.display === 'none') {
+      showNotification('Please select PayPal as your payment method', 'error');
+      return false;
+    }
+    
+    const paypalEmail = document.getElementById('paypalEmail');
+    if (!paypalEmail || !paypalEmail.value.trim() || !/^\S+@\S+\.\S+$/.test(paypalEmail.value)) {
+      if (paypalEmail) {
+        paypalEmail.classList.add('error');
+      }
+      showNotification('Please enter a valid PayPal email', 'error');
+      return false;
+    }
+    
+    if (paypalEmail) {
+      paypalEmail.classList.remove('error');
+    }
+    return true;
   }
   
   // Credit card validation
@@ -613,6 +650,11 @@ function loadSavedAddress() {
  */
 async function placeOrder() {
   try {
+    // Check if payment form is valid
+    if (!validatePaymentForm()) {
+      return;
+    }
+    
     // Get shipping address
     const shippingAddress = {
       fullName: document.getElementById('fullName').value,
@@ -641,7 +683,7 @@ async function placeOrder() {
     } else if (paymentMethod === 'paypal') {
       paymentDetails = {
         type: 'paypal',
-        email: shippingAddress.email
+        email: document.getElementById('paypalEmail').value || shippingAddress.email
       };
     }
     
@@ -660,24 +702,42 @@ async function placeOrder() {
     
     // Save payment info if checkbox is checked
     const savePaymentInfoCheckbox = document.getElementById('savePaymentInfo');
-    if (savePaymentInfoCheckbox && savePaymentInfoCheckbox.checked && paymentMethod === 'creditCard') {
-      const lastFour = paymentDetails.cardNumber.slice(-4);
-      API.storage.savePaymentInfo({
-        type: 'creditCard',
-        lastFour,
-        cardName: paymentDetails.cardName,
-        expiryDate: paymentDetails.expiryDate
-      });
+    if (savePaymentInfoCheckbox && savePaymentInfoCheckbox.checked) {
+      if (paymentMethod === 'creditCard') {
+        const lastFour = paymentDetails.cardNumber.slice(-4);
+        API.storage.savePaymentInfo({
+          type: 'creditCard',
+          lastFour,
+          cardName: paymentDetails.cardName,
+          expiryDate: paymentDetails.expiryDate
+        });
+      } else if (paymentMethod === 'paypal') {
+        API.storage.savePaymentInfo({
+          type: 'paypal',
+          email: paymentDetails.email
+        });
+      }
     }
     
-    // Process checkout
-    const result = await API.cart.checkout(shippingAddress);
+    // Process checkout - pass both shipping address and payment details
+    const result = await API.cart.checkout({
+      shippingAddress,
+      paymentDetails // Include the actual payment details here
+    });
     
-    // Show order confirmation
-    showOrderConfirmation(result, paymentMethod);
+    // Show order confirmation with all details
+    showOrderConfirmation({
+      shippingAddress,
+      paymentDetails
+    }, paymentMethod);
     
     // Update cart count
     updateCartCount();
+    
+    // Clear cart items locally
+    cartItems = [];
+    updateCartUI();
+    
   } catch (error) {
     console.error('Error placing order:', error);
     
@@ -693,10 +753,8 @@ async function placeOrder() {
   }
 }
 
-/**
- * Show order confirmation
- */
-function showOrderConfirmation(orderData, paymentMethod) {
+
+ function showOrderConfirmation(orderData, paymentMethod) {
   // Hide payment section
   const paymentSection = document.getElementById('paymentSection');
   if (paymentSection) {
@@ -722,9 +780,8 @@ function showOrderConfirmation(orderData, paymentMethod) {
   document.getElementById('paymentMethod').textContent = paymentMethodText;
 }
 
-/**
- * Capitalize first letter of string
- */
+// Capitalize first letter of string
+
 function capitalizeFirstLetter(string) {
   if (!string) return '';
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -1073,7 +1130,7 @@ function initPaymentFormHandlers() {
     
     // Prevent non-numeric key presses
     cardNumberInput.addEventListener('keypress', function(e) {
-      if (!/^\d*$/.test(e.key)) {
+      if (!/^\d*$/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Tab') {
         e.preventDefault();
       }
     });
@@ -1089,7 +1146,7 @@ function initPaymentFormHandlers() {
     
     // Prevent non-letter and non-space key presses
     cardNameInput.addEventListener('keypress', function(e) {
-      if (!/^[A-Za-z\s]*$/.test(e.key)) {
+      if (!/^[A-Za-z\s]*$/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Tab') {
         e.preventDefault();
       }
     });
@@ -1117,7 +1174,7 @@ function initPaymentFormHandlers() {
     
     // Prevent non-numeric key presses
     expiryDateInput.addEventListener('keypress', function(e) {
-      if (!/^\d*$/.test(e.key)) {
+      if (!/^\d*$/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Tab') {
         e.preventDefault();
       }
     });
@@ -1133,8 +1190,61 @@ function initPaymentFormHandlers() {
     
     // Prevent non-numeric key presses
     cvvInput.addEventListener('keypress', function(e) {
-      if (!/^\d*$/.test(e.key)) {
+      if (!/^\d*$/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Tab') {
         e.preventDefault();
+      }
+    });
+  }
+
+  const phoneInput = document.getElementById('phone');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function(e) {
+      // Remove any non-digit characters
+      e.target.value = e.target.value.replace(/\D/g, '').substring(0, 15);
+    });
+    
+    // Prevent non-numeric key presses
+    phoneInput.addEventListener('keypress', function(e) {
+      if (!/^\d*$/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Tab') {
+        e.preventDefault();
+      }
+    });
+  }
+
+  const nameInput = document.getElementById('fullName');
+  if (nameInput) {
+    nameInput.addEventListener('input', function(e) {
+      // Only allow letters and spaces
+      e.target.value = e.target.value.replace(/[^A-Za-z\s]/g, '');
+    });
+    
+    // Prevent non-letter and non-space key presses
+    nameInput.addEventListener('keypress', function(e) {
+      if (!/^[A-Za-z\s]*$/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Tab') {
+        e.preventDefault();
+      }
+    });
+  }
+
+  const emailInput = document.getElementById('email');
+  if (emailInput) {
+    emailInput.addEventListener('input', function(e) {
+      // Basic email validation - highlight error if invalid format
+      if (emailInput.value && !/^\S+@\S+\.\S+$/.test(emailInput.value)) {
+        emailInput.classList.add('error');
+        // Add a custom validation message
+        if (!emailInput.nextElementSibling || !emailInput.nextElementSibling.classList.contains('validation-message')) {
+          const validationMsg = document.createElement('div');
+          validationMsg.className = 'validation-message';
+          validationMsg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please include an \'@\' in the email address.';
+          emailInput.parentNode.insertBefore(validationMsg, emailInput.nextElementSibling);
+        }
+      } else {
+        emailInput.classList.remove('error');
+        // Remove validation message if exists
+        if (emailInput.nextElementSibling && emailInput.nextElementSibling.classList.contains('validation-message')) {
+          emailInput.nextElementSibling.remove();
+        }
       }
     });
   }
@@ -1174,12 +1284,22 @@ function detectCardType(number) {
 function togglePaymentForms(method) {
   const creditCardForm = document.getElementById('creditCardForm');
   const paypalForm = document.getElementById('paypalForm');
-  
+
+  const savePaymentInfoCheckbox = document.getElementById('savePaymentInfo');
+  if (savePaymentInfoCheckbox) {
+    savePaymentInfoCheckbox.checked = false; // Uncheck by default when switching methods
+  } 
   if (method === 'creditCard') {
-    creditCardForm.style.display = 'block';
-    paypalForm.style.display = 'none';
+    if (creditCardForm) creditCardForm.style.display = 'block';
+    if (paypalForm) paypalForm.style.display = 'none';
   } else if (method === 'paypal') {
-    creditCardForm.style.display = 'none';
-    paypalForm.style.display = 'block';
+    if (creditCardForm) creditCardForm.style.display = 'none';
+    if (paypalForm) paypalForm.style.display = 'block';
+    
+    // Set focus on the PayPal email field
+    const paypalEmail = document.getElementById('paypalEmail');
+    if (paypalEmail) {
+      paypalEmail.focus();
+    }
   }
 }

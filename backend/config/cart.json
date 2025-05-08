@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": "1746700681260",
+    "productId": "2",
+    "name": "MÖRBYLÅNGA Dining Table",
+    "price": 699.99,
+    "discount": 0,
+    "image": "/public/images/2/oak/morbylanga-table-1.jpg",
+    "quantity": 1,
+    "color": "oak",
+    "size": "2-seater"
+  }
+]
